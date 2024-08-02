@@ -1,3 +1,5 @@
+import { formatter } from '../../helpers';
+
 export type Item = {
   id: string;
   name: string;
@@ -9,12 +11,6 @@ type ItemCardProps = {
   item: Item;
 };
 
-const formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  maximumFractionDigits: 0,
-});
-
 const ItemCard = ({ item: { name, price, image } }: ItemCardProps) => {
   return (
     <div
@@ -25,7 +21,7 @@ const ItemCard = ({ item: { name, price, image } }: ItemCardProps) => {
       <img
         src={image}
         alt={name}
-        className="rounded-full w-[100px] md:w-[168px] h-[100px] md:h-[168px] object-center object-cover"
+        className="rounded-full w-[120px] md:w-[168px] h-[120px] md:h-[168px] object-center object-cover"
       />
       <label id="item-name" className="mt-[30px] font-bold text-xl md:text-2xl text-center">
         {name}

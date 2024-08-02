@@ -1,10 +1,12 @@
+export type Item = {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+};
+
 type ItemCardProps = {
-  item: {
-    id: string;
-    name: string;
-    price: number;
-    image: string;
-  };
+  item: Item;
 };
 
 const formatter = new Intl.NumberFormat('en-US', {
@@ -18,13 +20,19 @@ const ItemCard = ({ item: { name, price, image } }: ItemCardProps) => {
     <div
       role="presentation"
       aria-labelledby="item-name"
-      className="w-[300px] h-[360px] rounded-[22px] bg-white flex flex-col items-center pt-[28px]"
+      className="h-full rounded-2xl bg-white flex flex-col items-center justify-between py-6"
     >
-      <img src={image} alt={name} className="rounded-full w-[168px] h-[168px] object-center object-cover" />
-      <label id="item-name" className="mt-[30px] font-bold text-[30px]">
+      <img
+        src={image}
+        alt={name}
+        className="rounded-full w-[100px] md:w-[168px] h-[100px] md:h-[168px] object-center object-cover"
+      />
+      <label id="item-name" className="mt-[30px] font-bold text-xl md:text-2xl text-center">
         {name}
       </label>
-      <span className="mt-[10px] font-extrabold text-[24px] text-[#FFCA40]">{formatter.format(price)}</span>
+      <span className="mt-[10px] font-extrabold text-2xl md:text-3xl text-[#FFCA40]">
+        {formatter.format(price)}
+      </span>
     </div>
   );
 };

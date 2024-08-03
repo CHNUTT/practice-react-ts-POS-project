@@ -26,7 +26,7 @@ const ItemCard = ({ item: { name, price, image } }: ItemCardProps) => {
       <label id="item-name" className="mt-[30px] font-bold text-xl xl:text-2xl text-center">
         {name}
       </label>
-      <span className="mt-[10px] font-extrabold text-2xl xl:text-3xl text-[#FFCA40]">
+      <span className="mt-[10px] font-extrabold text-xl xl:text-2xl text-[#FFCA40]">
         {formatter.format(price)}
       </span>
     </div>

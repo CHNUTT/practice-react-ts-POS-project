@@ -27,24 +27,24 @@ const OrderItem = ({ item, qty, onIncrease, onDecrease, onRemove }: OrderItemPro
       <div className="flex flex-col pl-6 py-1 flex-1 justify-between ">
         <div className="flex flex-col">
           <span className="font-bold">{item.name}</span>
-          <span className="mt-1 text-[#717171] font-bold">{formatter.format(item.price)}</span>
+          <span className=" text-[#717171] font-bold">{formatter.format(item.price)}</span>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between mt-2">
           <div className="flex justify-start items-center">
             <button
               aria-label="decrease quantity"
               type="button"
               onClick={() => onDecrease(item.id)}
-              className="bg-[#FFCA40] px-3 rounded-md font-bold flex justify-center"
+              className="bg-[#FFCA40] px-2 rounded-md font-bold flex justify-center"
             >
               <span className="-mt-[2px]">-</span>
             </button>
-            <div className="text-[#717171] font-bold px-3 xl:px-5">{qty}</div>
+            <div className="text-[#717171] font-bold px-2 xl:px-4">{qty}</div>
             <button
               aria-label="increase quantity"
               type="button"
               onClick={() => onIncrease(item.id)}
-              className="bg-[#FFCA40] px-3 rounded-md font-bold flex justify-center"
+              className="bg-[#FFCA40] px-2 rounded-md font-bold flex justify-center"
             >
               <span className="-mt-[2px]">+</span>
             </button>

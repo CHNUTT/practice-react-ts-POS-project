@@ -30,14 +30,14 @@ describe('CardItem Component', () => {
     expect(itemPrice).toBeInTheDocument();
     expect(itemPrice).toHaveTextContent('$20,000');
 
-    const addItemBtn = getByRole(cardItem, 'button', { name: 'Add Item' });
+    const addItemBtn = getByRole(cardItem, 'button', { name: 'Add to Orders' });
     expect(addItemBtn).toBeInTheDocument();
   });
 
   it('should allow user to click Add Item button', async () => {
     render(<CardItem item={item} onAddItem={handleAddItem} />);
 
-    const addItemBtn = screen.getByRole('button', { name: 'Add Item' });
+    const addItemBtn = screen.getByRole('button', { name: 'Add to Orders' });
     await userEvent.click(addItemBtn);
 
     expect(handleAddItem).toHaveBeenCalledOnce();

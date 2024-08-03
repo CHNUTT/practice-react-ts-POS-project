@@ -31,7 +31,7 @@ const CardItem = ({ item: { name, price, image }, onAddItem }: CardItemProps) =>
       <span className="mt-[10px] font-extrabold text-xl xl:text-2xl text-[#FFCA40]">
         {formatter.format(price)}
       </span>
-      <Button onClick={onAddItem} label="Add Item" />
+      <Button onClick={onAddItem} label="Add to Orders" />
     </div>
   );
 };

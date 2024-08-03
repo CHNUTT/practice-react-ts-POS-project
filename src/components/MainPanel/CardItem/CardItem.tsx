@@ -1,5 +1,5 @@
 import { formatter } from '../../../helpers';
-import Button from '../../shared/Button/Button';
+import Button from '../../shared/Button';
 
 export type Item = {
   id: string;

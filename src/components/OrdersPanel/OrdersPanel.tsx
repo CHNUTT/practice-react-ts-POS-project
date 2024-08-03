@@ -3,6 +3,7 @@ import OrderItem, { Order } from './OrderItem/OrderItem';
 import { faFileLines, faUser } from '@fortawesome/free-regular-svg-icons';
 import { formatter } from '../../helpers';
 import { ChangeEvent } from 'react';
+import Button from '../shared/Button/Button';
 
 type Cart = {
   orders: Order[];
@@ -90,9 +91,7 @@ const OrdersPanel = ({
           </div>
         </form>
       </fieldset>
-      <button onClick={onOrder} className="w-full bg-[#FFCA40] mt-14 text-xs font-bold p-4 rounded-md">
-        Order Now
-      </button>
+      <Button onClick={onOrder} label="Order Now" />
       <button
         onClick={onCancel}
         className="mt-4 border-[1px] border-[#838383] inset-1 p-4 rounded-md text-xs font-bold"

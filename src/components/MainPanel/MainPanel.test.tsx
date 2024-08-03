@@ -30,7 +30,7 @@ const items = [
 
 describe('MainPanel Component', () => {
   it('should show correct item number', () => {
-    render(<MainPanel items={items} />);
+    render(<MainPanel items={items} onAddItem={() => {}} />);
     const cardItems = screen.getAllByRole('presentation');
     expect(cardItems).toHaveLength(4);
   });

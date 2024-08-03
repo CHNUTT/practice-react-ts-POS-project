@@ -1,4 +1,5 @@
-import { formatter } from '../../helpers';
+import { formatter } from '../../../helpers';
+import Button from '../../shared/Button/Button';
 
 export type Item = {
   id: string;
@@ -7,16 +8,17 @@ export type Item = {
   image: string;
 };
 
-type ItemCardProps = {
+type CardItemProps = {
   item: Item;
+  onAddItem: () => void;
 };
 
-const ItemCard = ({ item: { name, price, image } }: ItemCardProps) => {
+const CardItem = ({ item: { name, price, image }, onAddItem }: CardItemProps) => {
   return (
     <div
       role="presentation"
       aria-labelledby="item-name"
-      className="h-full rounded-2xl bg-white flex flex-col items-center justify-between py-6"
+      className="h-full rounded-2xl bg-white flex flex-col items-center justify-between py-6 px-4"
     >
       <img
         src={image}
@@ -29,8 +31,9 @@ const ItemCard = ({ item: { name, price, image } }: ItemCardProps) => {
       <span className="mt-[10px] font-extrabold text-xl xl:text-2xl text-[#FFCA40]">
         {formatter.format(price)}
       </span>
+      <Button onClick={onAddItem} label="Add Item" />
     </div>
   );
 };
 
-export default ItemCard;
+export default CardItem;

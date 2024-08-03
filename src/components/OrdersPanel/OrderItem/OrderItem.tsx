@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { formatter } from '../../../helpers';
-import { Item } from '../../ItemCard/ItemCard';
+import { Item } from '../../MainPanel/CardItem/CardItem';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 
 export type Order = {

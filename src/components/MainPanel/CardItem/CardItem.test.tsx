@@ -1,5 +1,6 @@
 import { getByRole, getByText, render, screen } from '@testing-library/react';
-import ItemCard from './ItemCard';
+import CardItem from '.';
+import userEvent from '@testing-library/user-event';
 
 const item = {
   id: '1',
@@ -8,9 +9,11 @@ const item = {
   image: 'https://playswellwithbutter.com/wp-content/uploads/2021/01/Cast-Iron-Steak-16.jpg',
 };
 
-describe('ItemCard Component', () => {
+const handleAddItem = vi.fn();
+
+describe('CardItem Component', () => {
   it(`should have all features (image, item's name, and item's price) which user can see`, () => {
-    render(<ItemCard item={item} />);
+    render(<CardItem item={item} onAddItem={() => {}} />);
 
     const cardItem = screen.getByRole('presentation', { name: item.name });
     expect(cardItem).toBeInTheDocument();
@@ -26,5 +29,17 @@ describe('ItemCard Component', () => {
     const itemPrice = getByText(cardItem, '$20,000');
     expect(itemPrice).toBeInTheDocument();
     expect(itemPrice).toHaveTextContent('$20,000');
+
+    const addItemBtn = getByRole(cardItem, 'button', { name: 'Add Item' });
+    expect(addItemBtn).toBeInTheDocument();
+  });
+
+  it('should allow user to click Add Item button', async () => {
+    render(<CardItem item={item} onAddItem={handleAddItem} />);
+
+    const addItemBtn = screen.getByRole('button', { name: 'Add Item' });
+    await userEvent.click(addItemBtn);
+
+    expect(handleAddItem).toHaveBeenCalledOnce();
   });
 });

@@ -8,18 +8,21 @@ const items = [
     name: 'Beef Steak',
     price: 20,
     image: 'https://playswellwithbutter.com/wp-content/uploads/2021/01/Cast-Iron-Steak-16.jpg',
+    category: '1',
   },
   {
     id: '2',
     name: 'Fried Chicken',
     price: 25,
     image: 'https://thegirlinspired.com/wp-content/uploads/2022/07/Fried-Chicken-28.jpg',
+    category: '1',
   },
   {
     id: '3',
     name: 'Beef Steak',
     price: 15,
     image: 'https://playswellwithbutter.com/wp-content/uploads/2021/01/Cast-Iron-Steak-16.jpg',
+    category: '1',
   },
 ];
 

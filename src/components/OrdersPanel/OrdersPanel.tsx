@@ -32,7 +32,7 @@ const OrdersPanel = ({
   onTableChange,
 }: OrdersPanelProps) => {
   return (
-    <div className="flex flex-col min-w-[320px] xl:min-w-[400px] pl-4 pr-6 xl:pr-10 pt-8 border-l-[1px] border-[#E2E2E2] border-solid">
+    <div className="flex flex-col min-w-[320px] max-w-[320px] xl:min-w-[400px] xl:max-w-[400px] pl-4 pr-6 xl:pr-10 pt-8 border-l-[1px] border-[#E2E2E2] border-solid">
       <div className="px-4">
         <h2 className="font-bold text-3xl">My Orders</h2>
         <p className="mt-4 text-[#717171] font-bold">Your orders will be appear here</p>

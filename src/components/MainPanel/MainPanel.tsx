@@ -2,19 +2,19 @@ import CardItem, { Item } from './CardItem/CardItem';
 
 type MainPanelProp = {
   items: Item[];
-  onAddItem: () => void;
+  onAddItem: (id: string) => void;
 };
 
 const MainPanel = ({ items, onAddItem: handleOnAddItem }: MainPanelProp) => {
   return (
     <div className="container mx-auto">
-      <div className="grid gap-4 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <ul className="grid gap-4 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {items.map((item) => (
-          <div key={item.id}>
+          <li key={item.id}>
             <CardItem item={item} onAddItem={handleOnAddItem} />
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

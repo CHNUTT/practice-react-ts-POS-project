@@ -34,7 +34,7 @@ const items = [
 
 describe('MainPanel Component', () => {
   it('should show correct item number', () => {
-    render(<MainPanel items={items} onAddItem={() => {}} />);
+    render(<MainPanel items={items} onAddItem={vi.fn()} />);
     const cardItems = screen.getAllByRole('presentation');
     expect(cardItems).toHaveLength(4);
   });

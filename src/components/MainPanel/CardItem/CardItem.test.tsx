@@ -7,6 +7,7 @@ const item = {
   name: 'Beef Steak',
   price: 20000,
   image: 'https://playswellwithbutter.com/wp-content/uploads/2021/01/Cast-Iron-Steak-16.jpg',
+  category: '1',
 };
 
 const handleAddItem = vi.fn();

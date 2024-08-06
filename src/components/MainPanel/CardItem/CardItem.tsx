@@ -6,6 +6,7 @@ export type Item = {
   name: string;
   price: number;
   image: string;
+  category: string;
 };
 
 type CardItemProps = {

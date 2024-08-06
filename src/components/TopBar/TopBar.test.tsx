@@ -22,8 +22,8 @@ describe('TopBar Component', () => {
 
     const menus = getAllByRole(menuList, 'listitem');
 
-    for (const index in menus) {
-      expect(menus[index]).toHaveTextContent(categories[index].name);
+    for (let index = 1; index < menus.length; index += 1) {
+      expect(menus[index]).toHaveTextContent(categories[index - 1].name);
     }
 
     expect(menus[0]).toHaveClass('underline');
@@ -36,7 +36,7 @@ describe('TopBar Component', () => {
 
     await userEvent.click(menus[2]);
     expect(handleMenuClicked).toHaveBeenCalledOnce();
-    expect(handleMenuClicked).toHaveBeenCalledWith('3');
+    expect(handleMenuClicked).toHaveBeenCalledWith('2');
     expect(menus[0]).not.toHaveClass('underline');
     expect(menus[2]).toHaveClass('underline');
   });

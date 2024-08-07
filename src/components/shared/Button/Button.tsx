@@ -4,7 +4,7 @@ type ButtonProps = {
 };
 
 const Button = ({ onClick, label }: ButtonProps) => (
-  <button onClick={onClick} className="w-full bg-[#FFCA40] mt-14 text-xs font-bold p-4 rounded-md">
+  <button onClick={onClick} className="w-full bg-[#FFCA40] text-xs font-bold p-4 rounded-md">
     {label}
   </button>
 );
